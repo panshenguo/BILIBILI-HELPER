@@ -6,6 +6,8 @@ import top.misec.apiquery.ApiList;
 import top.misec.utils.HttpUtil;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -62,10 +64,8 @@ public class DailyTask {
     }
 
     private void printTime() {
-        Date d = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String time = sdf.format(d);
-        log.info(time);
+        LocalDateTime now = LocalDateTime.now();
+        log.info(now.toString());
     }
 
     private void taskSuspend() throws InterruptedException {
